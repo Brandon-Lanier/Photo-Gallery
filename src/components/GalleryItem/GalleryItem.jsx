@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import './GalleryItem.css'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 function GalleryItem({ item, updateLikes, deleteItem}) {
 
@@ -26,13 +29,12 @@ function GalleryItem({ item, updateLikes, deleteItem}) {
                             <h2>{item.description}</h2>
                         </div>}
             </div>
-            <button onClick={handleLike}>Like</button>
-            <p>Total Likes {item.likes}</p>
-            <button onClick={handleDelete}>Delete</button>
+            <FavoriteBorderIcon onClick={handleLike}/><p>Total Likes {item.likes}</p>
+            <DeleteForeverIcon onClick={handleDelete}/>
 
         </div>
 
     )
 }
-
+{/* <button onClick={handleLike}>Like</button> */}
 export default GalleryItem;
