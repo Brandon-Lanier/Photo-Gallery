@@ -1,6 +1,6 @@
 import GalleryItem from '../GalleryItem/GalleryItem'
 
-function GalleryList({ gallery, updateLikes }) {
+function GalleryList({ gallery, updateLikes, deleteItem }) {
 
     return (
         <>
@@ -9,6 +9,7 @@ function GalleryList({ gallery, updateLikes }) {
                 key={item.id}
                 item={item}
                 updateLikes={updateLikes}
+                deleteItem={deleteItem}
             />)
             )}
         </>
