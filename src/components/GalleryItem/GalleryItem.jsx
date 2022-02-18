@@ -21,8 +21,6 @@ function GalleryItem({ item, updateLikes }) {
                         <div className="descriptionBox" onClick={handleClick}>
                             <h2>{item.description}</h2>
                         </div>}
-
-                    
             </div>
             <button onClick={handleLike}>Like</button>
             <p>Total Likes {item.likes}</p>
