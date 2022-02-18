@@ -8,6 +8,8 @@ const [newDescription, setNewDescription] = useState('');
 
 const handleSubmit = () => {
     addPhoto({newPath, newDescription})
+    setNewPath(''); //Clears the path input
+    setNewDescription(''); //Clears description input
 }
 
     return (
