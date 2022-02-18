@@ -3,7 +3,7 @@ import './GalleryItem.css'
 
 function GalleryItem({ item, updateLikes }) {
 
-    const [description, setDescription] = useState(true)
+    const [description, setDescription] = useState(false)
 
     const handleLike = () => {
         updateLikes(item.id);
@@ -15,15 +15,14 @@ function GalleryItem({ item, updateLikes }) {
 
     return (
         <div className="galleryBox">
-            <div className="picBox" onClick={handleClick}>
-                {description ?
-                    <img src={item.path} alt="Gallery Photo" className="galleryPicture" />
-                    :
-                    <div className="descriptionBox">
-                        <p>{item.description}</p>
-                    </div>
-                }
+            <div className="picBox" >
+                    <img src={item.path} alt="Gallery Photo" className="galleryPicture" onClick={handleClick} />
+                    {description && 
+                        <div className="descriptionBox" onClick={handleClick}>
+                            <h2>{item.description}</h2>
+                        </div>}
 
+                    
             </div>
             <button onClick={handleLike}>Like</button>
             <p>Total Likes {item.likes}</p>
