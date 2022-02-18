@@ -1,4 +1,4 @@
-.picBox {
+.galleryBox {
     display: flex;
     flex-flow: column wrap;
     width: 250px;
