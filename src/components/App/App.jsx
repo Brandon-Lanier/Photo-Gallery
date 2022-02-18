@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import GalleryList from '../GalleryList/GalleryList';
+import AddPhotoForm from '../AddPhotoForm/AddPhotoForm'
 import './App.css';
 
 function App() {
@@ -40,12 +41,25 @@ function App() {
     })
   }
 
+  const addPhoto = (newPhoto) => {
+    console.log(newPhoto);
+    axios.post('/gallery', newPhoto)
+    .then(response => {
+      fetchGallery();
+    }).catch(error => {
+      console.log('Error adding photo', error)
+    })
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
       <main className="App-main">
+        <AddPhotoForm 
+          addPhoto={addPhoto}
+          />
         <GalleryList
           gallery={gallery}
           updateLikes={updateLikes}
