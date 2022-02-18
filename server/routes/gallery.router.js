@@ -39,6 +39,20 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+    const newPath = req.body.newPath;
+    const newDesc = req.body.newDescription;
+    const qryTxt = `
+    INSERT INTO "pictures" ("path", "description") 
+    VALUES ($1, $2);`
+    pool.query(qryTxt, [newPath, newDesc])
+    .then(response => {
+        res.sendStatus(201);
+    }).catch(err => {
+        res.sendStatus(500);
+    })
+})
+
 // GET Route
 // router.get('/', (req, res) => {
 //     res.send(galleryItems);
