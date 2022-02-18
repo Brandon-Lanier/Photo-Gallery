@@ -1,23 +1,28 @@
 import { useState } from 'react';
 import './GalleryItem.css'
 
-function GalleryItem({item, updateLikes}) {
+function GalleryItem({ item, updateLikes }) {
 
-    const [description, setDescription] = useState(false)
+    const [description, setDescription] = useState(true)
 
     const handleLike = () => {
         updateLikes(item.id);
     }
 
     const handleClick = () => {
-        setDescription(true);
+        setDescription(!description);
     }
 
     return (
         <div className="galleryBox">
             <div className="picBox" onClick={handleClick}>
-            <img src={item.path} alt="Gallery Photo" className="galleryPicture" />
-            <p>{item.description}</p>
+                {description ?
+                    <img src={item.path} alt="Gallery Photo" className="galleryPicture" />
+                    :
+                    <div className="descriptionBox">
+                        <p>{item.description}</p>
+                    </div>
+                }
 
             </div>
             <button onClick={handleLike}>Like</button>

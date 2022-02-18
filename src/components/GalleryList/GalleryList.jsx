@@ -3,7 +3,7 @@ import GalleryItem from '../GalleryItem/GalleryItem'
 function GalleryList({ gallery, updateLikes }) {
 
     return (
-        <div>
+        <>
             {gallery.map(item =>
             (<GalleryItem
                 key={item.id}
@@ -11,7 +11,7 @@ function GalleryList({ gallery, updateLikes }) {
                 updateLikes={updateLikes}
             />)
             )}
-        </div>
+        </>
 
     )
 }
