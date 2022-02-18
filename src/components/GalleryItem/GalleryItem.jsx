@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './GalleryItem.css'
 
-function GalleryItem({ item, updateLikes }) {
+function GalleryItem({ item, updateLikes, deleteItem}) {
 
     const [description, setDescription] = useState(false)
 
@@ -11,6 +11,10 @@ function GalleryItem({ item, updateLikes }) {
 
     const handleClick = () => {
         setDescription(!description);
+    }
+
+    const handleDelete = () => {
+        deleteItem(item.id);
     }
 
     return (
@@ -24,6 +28,7 @@ function GalleryItem({ item, updateLikes }) {
             </div>
             <button onClick={handleLike}>Like</button>
             <p>Total Likes {item.likes}</p>
+            <button onClick={handleDelete}>Delete</button>
 
         </div>
 

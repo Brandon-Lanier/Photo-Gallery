@@ -25,10 +25,19 @@ function App() {
   const updateLikes = (id) => {
     axios.put(`/gallery/like/${id}`)
       .then(response => {
-        fetchGallery()
+        fetchGallery();
       }).catch(error => {
         console.log('Error updating likes', error);
       })
+  }
+
+  const deleteItem = (id) => {
+    axios.delete(`/gallery/${id}`)
+    .then(response => {
+      fetchGallery();
+    }).catch(error => {
+      console.log('Error deleting item', error);
+    })
   }
 
   return (
@@ -40,6 +49,7 @@ function App() {
         <GalleryList
           gallery={gallery}
           updateLikes={updateLikes}
+          deleteItem={deleteItem}
         />
       </main>
     </div>
