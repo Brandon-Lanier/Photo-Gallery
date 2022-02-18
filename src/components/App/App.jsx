@@ -20,9 +20,17 @@ useEffect(() => {
         }).catch(error => {
             console.log('Error fetching gallery');
         })
-
-
  }
+
+ const updateLikes = (id) => {
+   axios.put(`/gallery/like/${id}`)
+   .then(response => {
+     fetchGallery()
+   }).catch(error => {
+     console.log('Error updating likes', error);
+   })
+ }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -30,6 +38,7 @@ useEffect(() => {
         </header>
         <GalleryList 
             gallery={gallery}
+            updateLikes={updateLikes}
         />
       </div>
     );

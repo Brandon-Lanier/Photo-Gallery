@@ -1,11 +1,16 @@
+import GalleryItem from '../GalleryItem/GalleryItem'
 
-
-function GalleryList({gallery}) {
+function GalleryList({ gallery, updateLikes }) {
 
     return (
         <div>
-            {gallery.map(picture =>)}
-
+            {gallery.map(item =>
+            (<GalleryItem
+                key={item.id}
+                item={item}
+                updateLikes={updateLikes}
+            />)
+            )}
         </div>
 
     )
