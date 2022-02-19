@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: rgb(209, 209, 232);
+  font-family: roboto;
 }
 
 .App-header {
@@ -33,6 +34,14 @@
   margin: 0;
   padding: 0;
   height: 30px;
+}
+
+.FavoriteBorderIcon {
+  display: inline-block;
+}
+
+.FavoriteIcon {
+  display: inline-block;
 }
 
 

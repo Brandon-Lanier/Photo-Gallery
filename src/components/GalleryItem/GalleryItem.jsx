@@ -69,21 +69,28 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
             </CardContent>
             <CardActions>
                 {item.likes > 0 ? 
+                    <div className="likeDiv">
                     <IconButton
                     aria-label="liked"
                     onClick={handleLike}
                     color="secondary"
+                    left
                     >
-                    <FavoriteIcon /><p>{item.likes}</p>
+                    <FavoriteIcon left/>
                     </IconButton>
+                    <span>{item.likes}</span>
+                    </div>
                     :
+                    <div className="likeDiv">
                     <IconButton
                     aria-label="like"
                     onClick={handleLike}
                     color="secondary"
                     >
-                    <FavoriteBorderIcon /><p>{item.likes}</p>
+                    <FavoriteBorderIcon />
                     </IconButton>
+                    <span>{item.likes}</span>
+                    </div>
                 }
                 
                     <IconButton

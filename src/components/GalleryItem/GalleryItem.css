@@ -47,6 +47,16 @@
     justify-content: flex-start;
 }
 
-.FavoriteBorderIcon {
+/* .FavoriteBorderIcon {
     display: inline-block;
 }
+
+.FavoriteIcon {
+    display: inline-block;
+}
+
+.likeDiv {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+} */

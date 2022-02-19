@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import GalleryList from '../GalleryList/GalleryList';
-import AddPhotoForm from '../AddPhotoForm/AddPhotoForm'
+import AddPhotoForm from '../AddPhotoForm/AddPhotoForm';
+import '@fontsource/roboto/300.css';
 import './App.css';
 
 function App() {
