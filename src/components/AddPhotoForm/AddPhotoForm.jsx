@@ -6,7 +6,8 @@ function AddPhotoForm({addPhoto}) {
 const [newPath, setNewPath] = useState('');
 const [newDescription, setNewDescription] = useState('');
 
-const handleSubmit = () => {
+const handleSubmit = (e) => {
+    e.preventDefault();
     addPhoto({newPath, newDescription})
     setNewPath(''); //Clears the path input
     setNewDescription(''); //Clears description input

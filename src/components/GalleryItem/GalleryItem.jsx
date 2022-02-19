@@ -1,14 +1,22 @@
+import * as React from 'react';
 import { useState } from 'react';
-import './GalleryItem.css'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import ConfirmPopup from '../ConfirmPopup/ConfirmPopup';
 
-function GalleryItem({ item, updateLikes, deleteItem}) {
+function GalleryItem({ item, updateLikes, deleteItem }) {
 
     const [description, setDescription] = useState(false)
 
+
     const handleLike = () => {
+        console.log(item.id)
         updateLikes(item.id);
     }
 
@@ -21,20 +29,27 @@ function GalleryItem({ item, updateLikes, deleteItem}) {
     }
 
     return (
-        <div className="galleryBox">
-            <div className="picBox" >
-                    <img src={item.path} alt="Gallery Photo" className="galleryPicture" onClick={handleClick} />
-                    {description && 
-                        <div className="descriptionBox" onClick={handleClick}>
-                            <h2>{item.description}</h2>
-                        </div>}
-            </div>
-            <FavoriteBorderIcon onClick={handleLike}/><p>Total Likes {item.likes}</p>
-            <DeleteForeverIcon onClick={handleDelete}/>
-
-        </div>
-
-    )
+        <Card sx={{ maxWidth: 350 }}>
+            <CardActionArea onClick={handleClick}>
+                <CardMedia
+                    component="img"
+                    height="300"
+                    image={item.path}
+                    alt={item.description}
+                />
+            </CardActionArea>
+            <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                    {description && <div className="descriptionBox">{item.description}</div>}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                    <Button size="small" onClick={handleLike}><FavoriteBorderIcon /><p>{item.likes}</p></Button>
+                    <Button size="small" onClick={handleDelete}><DeleteForeverIcon /></Button>
+            </CardActions>
+        </Card>
+    );
 }
-{/* <button onClick={handleLike}>Like</button> */}
+
+
 export default GalleryItem;

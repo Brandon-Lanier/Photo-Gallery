@@ -13,10 +13,20 @@
   font-size: 1.5em;
 }
 
-main {
+.App-main {
   display: flex;
   flex-flow: row wrap;
   margin: 20px;
   justify-content: center;
 }
 
+.MuiCard-root {
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px black;
+}
+
+.MuiCardActions-spacing {
+  display: flex;
+  justify-content: space-between;
+}

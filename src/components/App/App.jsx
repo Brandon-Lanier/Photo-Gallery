@@ -34,21 +34,21 @@ function App() {
 
   const deleteItem = (id) => {
     axios.delete(`/gallery/${id}`)
-    .then(response => {
-      fetchGallery();
-    }).catch(error => {
-      console.log('Error deleting item', error);
-    })
+      .then(response => {
+        fetchGallery();
+      }).catch(error => {
+        console.log('Error deleting item', error);
+      })
   }
 
   const addPhoto = (newPhoto) => {
     console.log(newPhoto);
     axios.post('/gallery', newPhoto)
-    .then(response => {
-      fetchGallery();
-    }).catch(error => {
-      console.log('Error adding photo', error)
-    })
+      .then(response => {
+        fetchGallery();
+      }).catch(error => {
+        console.log('Error adding photo', error)
+      })
   }
 
   return (
@@ -56,10 +56,12 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
-      <main className="App-main">
-        <AddPhotoForm 
+      <section>
+        <AddPhotoForm
           addPhoto={addPhoto}
-          />
+        />
+      </section>
+      <main className="App-main">
         <GalleryList
           gallery={gallery}
           updateLikes={updateLikes}
