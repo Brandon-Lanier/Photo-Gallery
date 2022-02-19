@@ -19,6 +19,7 @@ function AddPhotoForm({ addPhoto }) {
 
     return (
         <div>
+            <h2>Add A Photo</h2>
             <Box
                 component="form"
                 sx={{
