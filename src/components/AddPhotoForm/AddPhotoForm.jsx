@@ -19,6 +19,7 @@ function AddPhotoForm({ addPhoto }) {
 
     return (
         <div>
+            <h2>Add A Photo</h2>
             <Box
                 component="form"
                 sx={{
@@ -27,20 +28,20 @@ function AddPhotoForm({ addPhoto }) {
                 noValidate
                 autoComplete="off"
             >
-                <TextField 
-                id="filled-basic" 
-                label="URL Path" 
-                variant="filled"
-                value={newPath}
-                onChange={(e) => setNewPath(e.target.value)}  
+                <TextField
+                    id="filled-basic"
+                    label="URL Path"
+                    variant="filled"
+                    value={newPath}
+                    onChange={(e) => setNewPath(e.target.value)}
                 />
-                <TextField 
-                id="filled-basic" 
-                label="Description" 
-                variant="filled" 
-                value={newDescription}
-                onChange={(e) => setNewDescription(e.target.value)}/>
-                <Button variant="outlined" onClick={handleSubmit}>Add Photo</Button>
+                <TextField
+                    id="filled-basic"
+                    label="Description"
+                    variant="filled"
+                    value={newDescription}
+                    onChange={(e) => setNewDescription(e.target.value)} />
+                <Button variant="outlined" color="secondary" onClick={handleSubmit}>Add Photo</Button>
             </Box>
         </div>
     )

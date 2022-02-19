@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import GalleryList from '../GalleryList/GalleryList';
-import AddPhotoForm from '../AddPhotoForm/AddPhotoForm'
+import AddPhotoForm from '../AddPhotoForm/AddPhotoForm';
+import '@fontsource/roboto/300.css';
+import UploadButtons from '../UploadButtons/UploadButtons';
 import './App.css';
 
 function App() {
@@ -54,9 +56,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Gallery of My Life</h1>
+        <h1 className="App-title">If Pictures Could Talk</h1>
       </header>
-
+      <UploadButtons />
       <section>
         <AddPhotoForm
           addPhoto={addPhoto}
