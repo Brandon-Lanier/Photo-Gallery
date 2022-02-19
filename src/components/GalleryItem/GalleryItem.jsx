@@ -5,9 +5,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import Collapse from '@mui/material/Collapse';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+
 import ConfirmPopup from '../ConfirmPopup/ConfirmPopup';
 
 function GalleryItem({ item, updateLikes, deleteItem }) {
@@ -33,7 +36,7 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
             <CardActionArea onClick={handleClick}>
                 <CardMedia
                     component="img"
-                    height="300"
+                    height="280"
                     image={item.path}
                     alt={item.description}
                 />
@@ -44,8 +47,17 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
                 </Typography>
             </CardContent>
             <CardActions>
-                    <Button size="small" onClick={handleLike}><FavoriteBorderIcon /><p>{item.likes}</p></Button>
-                    <Button size="small" onClick={handleDelete}><DeleteForeverIcon /></Button>
+                <IconButton
+                    aria-label="delete"
+                    onClick={handleLike}>
+                    <FavoriteBorderIcon /><p>{item.likes}</p>
+                </IconButton>
+                
+                    <IconButton
+                    aria-label="delete"
+                    onClick={handleDelete}>
+                    <DeleteIcon />
+                </IconButton>
             </CardActions>
         </Card>
     );

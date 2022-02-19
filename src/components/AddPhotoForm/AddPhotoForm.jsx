@@ -1,25 +1,47 @@
 import { useState } from "react";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 
-function AddPhotoForm({addPhoto}) {
+function AddPhotoForm({ addPhoto }) {
 
-const [newPath, setNewPath] = useState('');
-const [newDescription, setNewDescription] = useState('');
+    const [newPath, setNewPath] = useState('');
+    const [newDescription, setNewDescription] = useState('');
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    addPhoto({newPath, newDescription})
-    setNewPath(''); //Clears the path input
-    setNewDescription(''); //Clears description input
-}
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addPhoto({ newPath, newDescription })
+        setNewPath(''); //Clears the path input
+        setNewDescription(''); //Clears description input
+    }
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input value={newPath} placeholder="Photo URL" onChange={(e) => setNewPath(e.target.value)} />
-                <input value={newDescription} placeholder="Photo Description" onChange={(e) => setNewDescription(e.target.value)} />
-                <input type="submit" value="Submit" />
-            </form>
+            <Box
+                component="form"
+                sx={{
+                    '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+            >
+                <TextField 
+                id="filled-basic" 
+                label="URL Path" 
+                variant="filled"
+                value={newPath}
+                onChange={(e) => setNewPath(e.target.value)}  
+                />
+                <TextField 
+                id="filled-basic" 
+                label="Description" 
+                variant="filled" 
+                value={newDescription}
+                onChange={(e) => setNewDescription(e.target.value)}/>
+                <Button variant="outlined" onClick={handleSubmit}>Add Photo</Button>
+            </Box>
         </div>
     )
 }
