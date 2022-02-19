@@ -1,3 +1,7 @@
+.cardContainer {
+    margin: 50px;
+}
+
 .galleryBox {
     display: flex;
     flex-flow: column nowrap;
@@ -36,4 +40,13 @@
 .descriptionBox h2 {
     margin: 0;
     padding: 0;
+}
+
+.likesCont {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.FavoriteBorderIcon {
+    display: inline-block;
 }

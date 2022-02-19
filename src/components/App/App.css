@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: rgb(209, 209, 232);
 }
 
 .App-header {
@@ -13,10 +14,20 @@
   font-size: 1.5em;
 }
 
-main {
+.App-main {
   display: flex;
   flex-flow: row wrap;
   margin: 20px;
   justify-content: center;
 }
 
+.MuiCard-root {
+  margin: 10px;
+  /* border-radius: 20px; */
+  /* box-shadow: 0 0 20px black; */
+}
+
+.MuiCardActions-spacing {
+  display: flex;
+  justify-content: space-between;
+}
