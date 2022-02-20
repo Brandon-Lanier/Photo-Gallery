@@ -18,7 +18,7 @@ router.put('/like/:id', (req, res) => {
 
 // GET
 router.get('/', (req, res) => {
-    const qryTxt = `SELECT * FROM "pictures" ORDER BY "id";`;
+    const qryTxt = `SELECT * FROM "pictures" ORDER BY "id" DESC;`;
     pool.query(qryTxt)
     .then(response => {
         res.send(response.rows)
