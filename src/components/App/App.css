@@ -1,11 +1,11 @@
 .App {
   text-align: center;
-  background-color: rgb(209, 209, 232);
+  background-color: #ffe8d6;
   font-family: roboto;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #cb997e;
   padding: 1em;
   color: white;
   margin-bottom: 1em;
