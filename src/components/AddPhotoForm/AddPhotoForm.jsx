@@ -43,7 +43,7 @@ function AddPhotoForm({ addPhoto }) {
                     variant="filled"
                     value={newDescription}
                     onChange={(e) => setNewDescription(e.target.value)} />
-                <Button id="button" variant="outlined" color="primary" startIcon={<SaveIcon />} onClick={handleSubmit}>Add Photo</Button>
+                <Button id="button" style={{color: 'black'}} variant="outlined" color="primary" startIcon={<SaveIcon />} onClick={handleSubmit}>Add Photo</Button>
             </Box>
             </div>
         </div>
