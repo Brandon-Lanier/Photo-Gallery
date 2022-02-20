@@ -74,10 +74,9 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
                         <IconButton
                             aria-label="liked"
                             onClick={handleLike}
-                            color="secondary"
-                            left
+                            style={{color: '#eb4034'}}
                         >
-                            <FavoriteIcon left />
+                            <FavoriteIcon />
                         </IconButton>
                         <span>{item.likes}</span>
                     </div>
@@ -86,7 +85,7 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
                         <IconButton
                             aria-label="like"
                             onClick={handleLike}
-                            color="secondary"
+                            style={{color: '#eb4034'}}
                         >
                             <FavoriteBorderIcon />
                         </IconButton>

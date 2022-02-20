@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import GalleryList from '../GalleryList/GalleryList';
 import AddPhotoForm from '../AddPhotoForm/AddPhotoForm';
 import '@fontsource/roboto/300.css';
-import UploadButtons from '../UploadButtons/UploadButtons';
 import './App.css';
 
 
@@ -15,6 +14,7 @@ function App() {
   useEffect(() => {
     fetchGallery();
   }, [])
+
 
   const fetchGallery = () => {
     axios.get('/gallery')
@@ -60,7 +60,6 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">A Day In The Life</h1>
       </header>
-      <UploadButtons />
       <section>
         <AddPhotoForm
           addPhoto={addPhoto}
