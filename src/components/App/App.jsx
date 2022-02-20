@@ -10,10 +10,10 @@ import './App.css';
 
 function App() {
 
-  const [gallery, setGallery] = useState([])
+  const [gallery, setGallery] = useState([]); //Where the gallery images are store locally.
 
   useEffect(() => {
-    fetchGallery();
+    fetchGallery(); // Load gallery upon loading the page
   }, [])
 
 
@@ -28,7 +28,7 @@ function App() {
   }
 
   const updateLikes = (id) => {
-    axios.put(`/gallery/like/${id}`)
+    axios.put(`/gallery/like/${id}`) //ID is passed from the child component at GalleryItem and will update each like
       .then(response => {
         fetchGallery();
       }).catch(error => {
@@ -36,7 +36,7 @@ function App() {
       })
   }
 
-  const deleteItem = (id) => {
+  const deleteItem = (id) => { // Delete request with ID coming from child component - GalleryItem
     axios.delete(`/gallery/${id}`)
       .then(response => {
         fetchGallery();
@@ -54,6 +54,7 @@ function App() {
         console.log('Error adding photo', error)
       })
   }
+
 
   return (
 
