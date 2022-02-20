@@ -12,11 +12,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Swal from 'sweetalert2';
 import Fade from '@mui/material/Fade';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import Slide from '@mui/material/Slide';
 import ConfirmPopup from '../ConfirmPopup/ConfirmPopup';
 
 function GalleryItem({ item, updateLikes, deleteItem }) {
 
-    const [description, setDescription] = useState(false);
+    const [description, setDescription] = useState(false); //Variable to handle when to show the image description
 
 
     const deleteHistoryConfirm = () => {
@@ -41,7 +42,7 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
     }
 
     const handleLike = () => {
-        updateLikes(item.id);
+        updateLikes(item.id); // Will increase the likes of selected image 
     }
 
     const handleClick = () => {
@@ -53,7 +54,7 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
     }
 
     return (
-        <Card sx={{ maxWidth: 350 }}>
+        <Card sx={{ width: 300 }}>
             <CardActionArea onClick={handleClick}>
                 <CardMedia
                     component="img"
@@ -63,9 +64,11 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
                 />
             </CardActionArea>
             <CardContent>
+                <Slide in={description}>
                 <Typography variant="body2" color="text.secondary">
                     {description && <div className="descriptionBox">{item.description}</div>}
                 </Typography>
+                </Slide>
             </CardContent>
             {/* This will display an empty heart if no likes and changed to filled when click */}
             <CardActions>

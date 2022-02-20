@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import GalleryList from '../GalleryList/GalleryList';
 import AddPhotoForm from '../AddPhotoForm/AddPhotoForm';
 import '@fontsource/roboto/300.css';
+import Typography from '@mui/material/Typography';
 import './App.css';
 
 
@@ -58,7 +59,7 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">A Day In The Life</h1>
+        <Typography variant="h1">A Day In The Life</Typography>
       </header>
       <section>
         <AddPhotoForm

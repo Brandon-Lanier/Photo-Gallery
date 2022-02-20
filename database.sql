@@ -21,7 +21,7 @@ VALUES
     ('images/borabora2.jpeg', 'Bora Bora sunset'),
     ('images/quinn.jpg', 'Quinns first halloween'),
     ('images/egypt.jpeg', 'Pyramids In Giza, Egypt'),
-    ('images/brody.jpg', 'Adrian Brody and I in Cali'),
+    ('images/brody.jpg', 'Adam Brody and I in Cali'),
     ('images/arizona.jpg', 'Superstitious Mountains, AZ'),
     ('images/jose.jpg', 'Jose from Incubus and I in San Fran'),
     ('images/dad.jpeg', 'The day my daughter was born');
