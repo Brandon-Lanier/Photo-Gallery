@@ -7,6 +7,7 @@ import '@fontsource/roboto/300.css';
 import UploadButtons from '../UploadButtons/UploadButtons';
 import './App.css';
 
+
 function App() {
 
   const [gallery, setGallery] = useState([])
@@ -47,16 +48,17 @@ function App() {
     console.log(newPhoto);
     axios.post('/gallery', newPhoto)
       .then(response => {
-        fetchGallery();
+        fetchGallery(); // After adding photo, fetch the database pictures to rerender on DOM
       }).catch(error => {
         console.log('Error adding photo', error)
       })
   }
 
   return (
+
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">If Pictures Could Talk</h1>
+        <h1 className="App-title">A Day In The Life</h1>
       </header>
       <UploadButtons />
       <section>

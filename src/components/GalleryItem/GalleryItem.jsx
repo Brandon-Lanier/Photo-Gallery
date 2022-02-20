@@ -27,14 +27,14 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
             cancelButtonColor: '#bfbfbf',
             confirmButtonText: 'Delete'
         }).then((result) => {
-        if (result.isConfirmed) {
-            handleDelete(); // Will run the deleteHistory function if user hits confirm
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Photo Deleted',
-                showConfirmButton: false,
-                timer: 1500
+            if (result.isConfirmed) {
+                handleDelete(); // Will run the deleteHistory function if user hits confirm
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Photo Deleted',
+                    showConfirmButton: false,
+                    timer: 1500
                 });
             }
         });
@@ -45,7 +45,7 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
     }
 
     const handleClick = () => {
-        setDescription(!description);
+        setDescription(!description); //When image is clicked, this will trigger the description to opposite to hide or display description.
     }
 
     const handleDelete = () => {
@@ -67,33 +67,34 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
                     {description && <div className="descriptionBox">{item.description}</div>}
                 </Typography>
             </CardContent>
+            {/* This will display an empty heart if no likes and changed to filled when click */}
             <CardActions>
-                {item.likes > 0 ? 
+                {item.likes > 0 ?
                     <div className="likeDiv">
-                    <IconButton
-                    aria-label="liked"
-                    onClick={handleLike}
-                    color="secondary"
-                    left
-                    >
-                    <FavoriteIcon left/>
-                    </IconButton>
-                    <span>{item.likes}</span>
+                        <IconButton
+                            aria-label="liked"
+                            onClick={handleLike}
+                            color="secondary"
+                            left
+                        >
+                            <FavoriteIcon left />
+                        </IconButton>
+                        <span>{item.likes}</span>
                     </div>
                     :
                     <div className="likeDiv">
-                    <IconButton
-                    aria-label="like"
-                    onClick={handleLike}
-                    color="secondary"
-                    >
-                    <FavoriteBorderIcon />
-                    </IconButton>
-                    <span>{item.likes}</span>
+                        <IconButton
+                            aria-label="like"
+                            onClick={handleLike}
+                            color="secondary"
+                        >
+                            <FavoriteBorderIcon />
+                        </IconButton>
+                        <span>{item.likes}</span>
                     </div>
                 }
-                
-                    <IconButton
+
+                <IconButton
                     aria-label="delete"
                     onClick={deleteHistoryConfirm}>
                     <DeleteIcon />
