@@ -11,7 +11,7 @@ This is a simple photo gallery app that will show a description of each photo wh
 The app has the ability to take in more photos with the form at the top of the page.  At this time, only image URL's are accepted, but upload functionality is coming soon!
 ## Screen Shot
 
-![alt text](https://github.com/Brandon-Lanier/weekend-react-gallery/blob/master/src/public/images/screenrecording.gif?raw=true)
+![alt text](https://github.com/Brandon-Lanier/weekend-react-gallery/blob/master/public/images/screenrecording.gif?raw=true)
 ### Prerequisites
 
 - Internet Browser
