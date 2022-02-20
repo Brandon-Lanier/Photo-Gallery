@@ -1,5 +1,6 @@
 import GalleryItem from '../GalleryItem/GalleryItem'
 
+// Passing down props of the gallery array
 function GalleryList({ gallery, updateLikes, deleteItem }) {
 
     return (
