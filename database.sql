@@ -1,8 +1,8 @@
 -- Set up a database named "react_gallery"
 
-CREATE TABLE "pictures" (
+ CREATE TABLE "pictures" (
 	"id" SERIAL PRIMARY KEY,
-	"path" VARCHAR(300),
+	"path" VARCHAR(400),
 	"description" VARCHAR(300),
 	"likes" INT DEFAULT(0)
 	);
@@ -25,3 +25,6 @@ VALUES
     ('images/arizona.jpg', 'Superstitious Mountains, AZ'),
     ('images/jose.jpg', 'Jose from Incubus and I in San Fran'),
     ('images/dad.jpeg', 'The day my daughter was born');
+
+   
+	
