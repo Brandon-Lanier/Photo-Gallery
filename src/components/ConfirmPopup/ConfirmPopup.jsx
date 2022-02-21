@@ -6,6 +6,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
+// I ended up not using this confirm dialog box because I couldn't get it to work.  
+// Leaving the code here to try later
+
 export default function AlertDialog() {
   const [open, setOpen] = React.useState(false);
 

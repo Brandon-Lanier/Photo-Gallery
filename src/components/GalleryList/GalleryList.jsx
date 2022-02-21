@@ -1,34 +1,24 @@
 import GalleryItem from '../GalleryItem/GalleryItem'
 
-// Passing down props of the gallery array
+// Passing down props from App.jsx
 function GalleryList({ gallery, updateLikes, deleteItem }) {
 
-    return (
-        <>
-            {gallery.map(item =>
-            (<GalleryItem
-                key={item.id}
-                item={item}
-                updateLikes={updateLikes}
-                deleteItem={deleteItem}
-            />)
-            )}
-        </>
+  return (
+    <>
+      {/* Loop through the gallery array and display each gallery item in a container*/}
+      {gallery.map(item =>
+      (<GalleryItem
+        key={item.id} // Unique identifier for each object in the array.
+        item={item}
+        updateLikes={updateLikes}
+        deleteItem={deleteItem}
+      // Props being passed down into Gallery Item from App
+      />)
+      )}
+    </>
 
-    )
+  )
 }
 
-export default GalleryList;
 
-{/* <GalleryList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
-  {gallery.map((item) => (
-    <GalleryItem key={item.img}>
-      <img
-        src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-        srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-        alt={item.title}
-        loading="lazy"
-      />
-    </GalleryItem>
-  ))}
-</GalleryList> */}
+export default GalleryList;

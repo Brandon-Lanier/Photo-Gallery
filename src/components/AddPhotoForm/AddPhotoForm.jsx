@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import SaveIcon from '@mui/icons-material/Save';
 import Swal from 'sweetalert2';
 import './AddPhotoForm.css'
+import { Typography } from "@mui/material";
 
 
 function AddPhotoForm({ addPhoto }) {
@@ -16,9 +17,9 @@ function AddPhotoForm({ addPhoto }) {
         e.preventDefault();
         { //Conditional Rendering to handle if the path url is entered or not.  If not user will be given a notice.
             newPath === '' ?
-            Swal.fire('Please enter a URL')
-            :
-            addPhoto({ newPath, newDescription }) // Pushing url and description to the parent App function 'addPhoto'
+                Swal.fire({title: 'Please enter a URL', confirmButtonColor: '#cb997e'})
+                :
+                addPhoto({ newPath, newDescription }) // Pushing url and description to the parent App function 'addPhoto'
             setNewPath(''); //Clears the path input
             setNewDescription(''); //Clears description input
         }
@@ -26,7 +27,9 @@ function AddPhotoForm({ addPhoto }) {
 
     return (
         <div>
-            <h2>Add A Photo</h2>
+            <Typography variant="h5">
+                Add A Photo
+            </Typography>
             <div className="inputContainer">
                 <Box
                     component="form"
@@ -51,10 +54,10 @@ function AddPhotoForm({ addPhoto }) {
                         onChange={(e) => setNewDescription(e.target.value)} />
                 </Box>
             </div>
-            <Button 
-            sx={{ width: 300, backgroundColor: 'black', color: 'white' }} 
-            variant="contained" startIcon={<SaveIcon />} 
-            onClick={handleSubmit}>Add Photo</Button>
+            <Button
+                color="primary"
+                variant="contained" startIcon={<SaveIcon />}
+                onClick={handleSubmit}>Add Photo</Button>
         </div>
     )
 }

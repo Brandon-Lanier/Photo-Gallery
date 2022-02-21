@@ -9,26 +9,33 @@ _Duration: 2 Day Sprint_
 This is a simple photo gallery app that will show a description of each photo when the image is pressed.  Users have the ability to "like" an image by clicking on the heart button at the bottom left of each image container.  Users can also delete an image by clicking on the trash can button at the bottom right of the container.
 
 The app has the ability to take in more photos with the form at the top of the page.  At this time, only image URL's are accepted, but upload functionality is coming soon!
-## Screen Shot
 
-![alt text](https://github.com/Brandon-Lanier/weekend-react-gallery/blob/master/public/images/screenrecording.gif?raw=true)
+## Screen Capture
+
+![alt text](https://github.com/Brandon-Lanier/weekend-react-gallery/blob/master/public/images/screenrecording.nov?raw=true)
+
 ### Prerequisites
 
 - Internet Browser
 - Node.js
 - Express
+- React
+- PostgreSQL
 - Database GUI (e.g. Postico)
+
 
 ## Installation
 
-- Install Node.js, express, postgres and body parser on local machine.
+- Install Node.js, express, react, postgres and body parser on local machine.
 - To setup the database locally, please see the database.sql file for instructions.
+
 
 ## Usage
 
 1. Click on an image to display the description of the photo.
 2. Click on the heart button if you like the photo!
 3. To add a photo, input the image URL and description in the form and press 'Add Photo'.
+4. To delete a photo, click on the trash can button at the bottom right of an image card.
 
 
 ## Built With
