@@ -17,11 +17,10 @@ function App() {
   }, [])
 
 
-  const fetchGallery = () => {
+  const fetchGallery = () => { // Gets all images, descriptions and likes from the server
     axios.get('/gallery')
       .then(response => {
         setGallery(response.data);
-        console.log(gallery);
       }).catch(error => {
         console.log('Error fetching gallery');
       })
@@ -72,7 +71,9 @@ function App() {
           gallery={gallery}
           updateLikes={updateLikes}
           deleteItem={deleteItem}
+          // Props being passed down to child components
         />
+
       </main>
     </div>
   );

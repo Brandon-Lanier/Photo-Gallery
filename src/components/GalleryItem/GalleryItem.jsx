@@ -11,6 +11,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Swal from 'sweetalert2';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Slide from '@mui/material/Slide';
+import './GalleryItem.css'
 
 
 function GalleryItem({ item, updateLikes, deleteItem }) {
@@ -34,7 +35,7 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
         Swal.fire({ // Sweet Alert pop up to confirm deletion request
             title: 'Are you sure you want to delete this photo?',
             showCancelButton: true,
-            confirmButtonColor: '#bd3030',
+            confirmButtonColor: '#cb997e',
             cancelButtonColor: '#bfbfbf',
             confirmButtonText: 'Delete'
         }).then((result) => {
@@ -63,14 +64,14 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
             </CardActionArea>
             <CardContent>
                 <Slide in={description}>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="text.primary">
                         {description && <div className="descriptionBox">{item.description}</div>} {/* When Description is true, show description */}
                     </Typography>
                 </Slide>
             </CardContent>
             {/* This will display an empty heart if no likes and changed to filled when click */}
             <CardActions>
-                {item.likes > 0 ?
+                {item.likes > 0 ? //Conditional that keeps icon not filled if 0 likes.
                     <div className="likeDiv">
                         <IconButton
                             aria-label="liked"
@@ -81,7 +82,7 @@ function GalleryItem({ item, updateLikes, deleteItem }) {
                         </IconButton>
                         <span>{item.likes}</span>
                     </div>
-                    :
+                    : // If the like button has been hit, the icon will fill in
                     <div className="likeDiv">
                         <IconButton
                             aria-label="like"
