@@ -12,7 +12,7 @@ The app has the ability to take in more photos with the form at the top of the p
 
 ## Screen Capture
 
-https://github.com/Brandon-Lanier/weekend-react-gallery/blob/master/public/images/screenrecording.nov?raw=true
+![alt text](https://github.com/Brandon-Lanier/weekend-react-gallery/blob/master/public/images/screenrecording.mov?raw=true)
 
 ### Prerequisites
 
